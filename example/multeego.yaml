@@ -1,0 +1,15 @@
+port: 8080
+services:
+  - path: /red/
+    cwd: ./red-src
+    port: 8060
+    command: go
+    arguments: run main.go -port ${PORT}
+
+  - path: /blue/
+    cwd: ./blue-src
+    port: 8070
+    command: fresh
+
+  - path: /
+    cwd: ./static
